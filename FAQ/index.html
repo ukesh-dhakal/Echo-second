@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echo Creations | FAQs</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background-color: #0b0b0b; color: #fff; font-family: 'Urbanist', sans-serif; overflow-x: hidden; }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Echo Creations Navbar (Consistent Across All Pages) ===== -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[rgba(17,16,19,0.24)] backdrop-blur-sm border-b border-[#2a2a2a] h-[90px]">
+  <div class="container mx-auto relative flex items-center justify-between px-[60px] h-full">
+    <!-- Left: Logos -->
+    <div class="flex items-center gap-3">
+      <img src="echo-creations-logo-copy-10.png" alt="Logo" class="h-[42px] w-auto object-contain" />
+      <img src="echo-creations-logo-copy-20.png" alt="Echo Creations" class="h-8 w-auto object-contain" />
+    </div>
+
+    <!-- Center: Nav Links -->
+    <nav id="navLinks" class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 gap-8 items-center">
+      <a href="../Home/index.html" class="nav-link">Home</a>
+      <a href="../About/index.html" class="nav-link">About</a>
+      <a href="../Podcasts/index.html" class="nav-link">Ankur’s Podcast</a>
+      <a href="../Servics/index.html" class="nav-link">Services</a>
+      <a href="../FAQ/index.html" class="nav-link">FAQs</a>
+      <a href="../Contact/index.html" class="nav-link">Contact</a>
+    </nav>
+
+    <!-- Right: CTA Button -->
+    <a href="../Inquiry/index.html"
+      class="hidden lg:flex items-center gap-1 bg-secondary text-white rounded-full px-6 py-2.5 hover:bg-yellow-500 transition">
+      <span class="text-[16px] font-medium">Let’s Talk</span>
+      <img src="formkit-arrowright0.svg" alt="→" class="h-3" />
+    </a>
+
+    <!-- Mobile Menu Toggle -->
+    <button id="menuToggle" class="lg:hidden text-white text-3xl">☰</button>
+  </div>
+
+  <!-- Mobile Dropdown -->
+  <div id="mobileMenu"
+    class="hidden flex-col bg-black/90 backdrop-blur-md text-center py-6 gap-4 border-t border-gray-800">
+    <a href="../Home/index.html" class="mobile-link">Home</a>
+    <a href="../About/index.html" class="mobile-link">About</a>
+    <a href="../Podcasts/index.html" class="mobile-link">Ankur’s Podcast</a>
+    <a href="../Servics/index.html" class="mobile-link">Services</a>
+    <a href="../FAQ/index.html" class="mobile-link">FAQs</a>
+    <a href="../Contact/index.html" class="mobile-link">Contact</a>
+    <a href="../Inquiry/index.html"
+      class="bg-yellow-500 text-black rounded-full w-fit mx-auto px-6 py-2 hover:bg-yellow-400 transition font-semibold">Let’s Talk</a>
+  </div>
+
+  <script>
+    // Mobile toggle logic
+    const menuToggle = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    menuToggle.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Active page highlight logic
+    (function () {
+      const currentPath = window.location.pathname.replace(/\\/g, '/');
+      document.querySelectorAll('.nav-link, .mobile-link').forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        const linkPath = new URL(href, window.location.origin).pathname.replace(/\\/g, '/');
+        if (currentPath.endsWith(linkPath)) {
+          link.classList.add('text-white', 'font-semibold', 'underline', 'decoration-2', 'decoration-white');
+        } else {
+          link.classList.add('text-gray-400', 'hover:text-white', 'transition');
+        }
+      });
+    })();
+  </script>
+
+  <style>
+    .nav-link {
+      font-family: 'Urbanist', sans-serif;
+      font-size: 18px;
+      font-weight: 500;
+      color: #9b9b9b;
+      transition: color 0.3s ease;
+    }
+    .nav-link:hover {
+      color: #ffffff;
+    }
+    .mobile-link {
+      color: #9b9b9b;
+      font-size: 18px;
+      transition: color 0.3s ease;
+    }
+    .mobile-link:hover {
+      color: #ffffff;
+    }
+  </style>
+</header>
+
+
+  <!-- ===== Hero Section ===== -->
+  <section class="relative min-h-[60vh] flex flex-col items-center justify-center text-center overflow-hidden">
+    <img src="mask-group0.svg" alt="Hero Image"
+      class="absolute inset-0 w-full h-full object-cover brightness-[0.7]" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/70 to-black/90"></div>
+    <div class="relative z-10 px-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-3">FAQs</h1>
+      <p class="text-gray-300 text-lg">Answers to Your Most Asked Questions</p>
+    </div>
+  </section>
+
+  <!-- ===== FAQ Section ===== -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-12 items-start">
+      
+      <!-- Left Side -->
+      <div class="flex flex-col gap-6 max-w-lg">
+        <h2 class="text-3xl font-semibold leading-tight">Any Questions?<br>We got you.</h2>
+        <p class="text-gray-400">
+          Fermentum tristique nibh libero et quis nunc neque amet cursus. Enim convallis mattis nibh in dictum erat porttitor tortor convallis.
+        </p>
+        <a href="../Contact/index.html"
+          class="bg-yellow-500 text-black font-medium px-8 py-3 rounded-full hover:bg-yellow-400 transition inline-flex items-center gap-2">
+          Talk to Us
+          <img src="formkit-arrowright0.svg" class="h-3" alt="→" />
+        </a>
+      </div>
+
+      <!-- Right Side: FAQs -->
+      <div class="flex-1 flex flex-col gap-6">
+        <div class="border-b border-yellow-500 pb-4">
+          <details open class="group">
+            <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
+              <span>What is Echo Creations?</span>
+              <img src="group-10.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+            </summary>
+            <p class="text-gray-400 mt-3">
+              A visionary media company specializing in documentaries, podcasts, photography, and filmmaking — bringing creative ideas to life that resonate like an echo.
+            </p>
+          </details>
+        </div>
+
+        <div class="border-b border-yellow-500 pb-4">
+          <details class="group">
+            <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
+              <span>How can I get in touch with Echo Creations?</span>
+              <img src="group-11.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+            </summary>
+            <p class="text-gray-400 mt-3">
+              You can reach us anytime through our <a href="../Contact/index.html" class="text-yellow-400 hover:underline">Contact Page</a>, email, or social channels.
+            </p>
+          </details>
+        </div>
+
+        <div class="border-b border-yellow-500 pb-4">
+          <details class="group">
+            <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
+              <span>What kind of photography services do you offer?</span>
+              <img src="group-12.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+            </summary>
+            <p class="text-gray-400 mt-3">
+              We provide a range of photography services — from documentary and commercial shoots to creative campaigns and high-altitude projects.
+            </p>
+          </details>
+        </div>
+
+        <div class="border-b border-yellow-500 pb-4">
+          <details class="group">
+            <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
+              <span>Do you produce podcasts for individuals or businesses?</span>
+              <img src="group-13.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+            </summary>
+            <p class="text-gray-400 mt-3">
+              Yes — we create tailored podcasts for brands, organizations, and individuals who want their stories told with authenticity and impact.
+            </p>
+          </details>
+        </div>
+
+        <div class="border-b border-yellow-500 pb-4">
+          <details class="group">
+            <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
+              <span>Do you handle post-production for filmmaking and photography?</span>
+              <img src="group-14.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+            </summary>
+            <p class="text-gray-400 mt-3">
+              Absolutely — our team handles color grading, editing, sound design, and visual effects to deliver stunning final outputs.
+            </p>
+          </details>
+        </div>
+
+        <div class="border-b border-yellow-500 pb-4">
+          <details class="group">
+            <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
+              <span>Can I collaborate with Echo Creations as a freelance creative?</span>
+              <img src="group-15.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+            </summary>
+            <p class="text-gray-400 mt-3">
+              Yes, we’re always open to collaborating with passionate freelancers and creatives. Drop us a message on our contact page!
+            </p>
+          </details>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-gray-700 pt-16 pb-10 px-6 bg-black/70 backdrop-blur">
+    <div class="max-w-5xl mx-auto flex flex-col gap-10 items-center text-center">
+      <h3 class="text-2xl md:text-3xl font-bold text-yellow-400">Create. Inspire. Subscribe.</h3>
+      <form class="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xl">
+        <input type="email" placeholder="Email Address"
+          class="px-6 py-3 rounded-full border border-yellow-500 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full" />
+        <button type="submit"
+          class="bg-yellow-500 text-black px-6 py-3 rounded-full hover:bg-yellow-400 transition font-semibold">
+          Subscribe
+        </button>
+      </form>
+
+      <div class="flex gap-4 mt-6 flex-wrap justify-center">
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="ri-facebook-fill0.svg" class="h-5 w-5" /></a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="mdi-linkedin0.svg" class="h-5 w-5" /></a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="ic-baseline-tiktok0.svg" class="h-5 w-5" /></a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="mdi-youtube0.svg" class="h-5 w-5" /></a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="ri-whatsapp-fill0.svg" class="h-5 w-5" /></a>
+      </div>
+
+      <div class="w-full border-t border-gray-700 pt-8">
+        <div class="flex flex-wrap justify-center gap-6 text-gray-300 text-sm md:text-base">
+          <a href="../Insights/index.html" class="hover:text-yellow-400">Insights</a>
+          <a href="../Testimonials/index.html" class="hover:text-yellow-400">Testimonials</a>
+          <a href="../FAQ/index.html" class="hover:text-yellow-400">FAQs</a>
+          <a href="../terms and conditions/index.html#privacy-policy" class="hover:text-yellow-400">Privacy Policy</a>
+          <a href="../terms and conditions/index.html" class="hover:text-yellow-400">Terms & Conditions</a>
+        </div>
+        <p class="text-gray-500 text-sm mt-6">
+          © 2024 <span class="text-white font-semibold">Echo Creations</span>. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

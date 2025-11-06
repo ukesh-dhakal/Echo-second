@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echo Creations | Contact Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+</head>
+<body class="bg-[#0b0b0b] text-white font-sans overflow-x-hidden">
+
+  <!-- ===== Navbar ===== -->
+  <header class="sticky top-0 w-full z-50 bg-black/60 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div class="flex items-center gap-3">
+        <img src="echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Logo" />
+        <img src="echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations" />
+      </div>
+      <button id="menuToggle" class="lg:hidden text-white text-3xl">☰</button>
+      <nav id="navMenu"
+        class="hidden lg:flex flex-col lg:flex-row gap-8 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
+        <a href="../Home/index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="../About/index.html" class="text-gray-300 hover:text-white">About</a>
+        <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white">Podcast</a>
+        <a href="../Servics/index.html" class="text-gray-300 hover:text-white">Services</a>
+        <a href="index.html" class="text-yellow-400 underline font-semibold">Contact</a>
+      </nav>
+      <a href="../Inquiry/index.html"
+        class="hidden lg:inline-block bg-yellow-500 text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">Let’s Talk →</a>
+    </div>
+  </header>
+
+  <script>
+    document.getElementById("menuToggle").onclick = () => {
+      document.getElementById("navMenu").classList.toggle("hidden");
+    };
+  </script>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="relative min-h-[60vh] flex flex-col items-center justify-center text-center overflow-hidden">
+    <img src="mask-group0.svg" alt="Hero Image"
+      class="absolute inset-0 w-full h-full object-cover brightness-[0.8]" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/60 to-black/90"></div>
+    <div class="relative z-10 px-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-3">Contact Us</h1>
+      <p class="text-gray-300 text-lg">We’d Love to Hear From You</p>
+    </div>
+  </section>
+
+  <!-- ===== Contact Info Section ===== -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col items-center gap-12">
+      <div class="text-center">
+        <h2 class="text-3xl font-semibold mb-2">Contact Info</h2>
+        <p class="text-gray-400">Reach Us Anytime, Anywhere. Our Lines Are Always Open.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+        <div class="flex flex-col items-center gap-4">
+          <img src="ph-phone-call-light0.svg" class="w-16 h-16" alt="Call" />
+          <h3 class="text-xl font-semibold">Call Us</h3>
+          <p class="text-yellow-400">+977 9876543210</p>
+        </div>
+        <div class="flex flex-col items-center gap-4">
+          <img src="clarity-email-line0.svg" class="w-16 h-16" alt="Email" />
+          <h3 class="text-xl font-semibold">Chat Us</h3>
+          <p class="text-yellow-400">info.echocreations@gmail.com</p>
+        </div>
+        <div class="flex flex-col items-center gap-4">
+          <img src="weui-location-outlined0.svg" class="w-16 h-16" alt="Location" />
+          <h3 class="text-xl font-semibold">Visit Us</h3>
+          <p class="text-yellow-400">Lumbini Marg, Kathmandu 44600</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Images Section ===== -->
+  <section class="flex flex-col md:flex-row w-full">
+    <img src="mask-group1.svg" alt="Studio 1" class="w-full md:w-1/2 h-[400px] object-cover" />
+    <img src="mask-group2.svg" alt="Studio 2" class="w-full md:w-1/2 h-[400px] object-cover" />
+  </section>
+
+  <!-- ===== Form Section ===== -->
+  <section class="py-20 px-6">
+    <div class="max-w-3xl mx-auto text-center flex flex-col gap-10">
+      <div>
+        <h2 class="text-3xl font-semibold mb-2">Let’s Talk</h2>
+        <p class="text-gray-400">Whether you have a project in mind or just want to say hello, we’re here for you.</p>
+      </div>
+
+      <form class="flex flex-col gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <input type="text" placeholder="First Name*" class="px-6 py-3 rounded-full border border-yellow-500 bg-transparent text-white focus:outline-none" />
+          <input type="text" placeholder="Last Name*" class="px-6 py-3 rounded-full border border-yellow-500 bg-transparent text-white focus:outline-none" />
+          <input type="email" placeholder="Email Address*" class="px-6 py-3 rounded-full border border-yellow-500 bg-transparent text-white focus:outline-none" />
+          <input type="tel" placeholder="Phone*" class="px-6 py-3 rounded-full border border-yellow-500 bg-transparent text-white focus:outline-none" />
+        </div>
+        <textarea placeholder="Message" rows="5" class="w-full px-6 py-4 rounded-3xl border border-yellow-500 bg-transparent text-white focus:outline-none"></textarea>
+
+        <button type="submit"
+          class="mx-auto bg-yellow-500 text-black px-10 py-3 rounded-full font-semibold hover:bg-yellow-400 transition flex items-center gap-2">
+          Send <img src="formkit-arrowright0.svg" class="h-3" alt="→" />
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-gray-700 pt-16 pb-10 px-6 bg-black/70 backdrop-blur">
+    <div class="max-w-4xl mx-auto flex flex-col gap-10 items-center text-center">
+      <h3 class="text-2xl md:text-3xl font-bold text-yellow-400">Create. Inspire. Subscribe.</h3>
+      <form class="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xl">
+        <input type="email" placeholder="Email Address"
+          class="px-6 py-3 rounded-full border border-yellow-500 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full" />
+        <button type="submit"
+          class="bg-yellow-500 text-black px-6 py-3 rounded-full hover:bg-yellow-400 transition font-semibold">
+          Subscribe
+        </button>
+      </form>
+
+      <div class="flex gap-4 mt-6">
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="ri-facebook-fill0.svg" class="h-5 w-5" /></a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="mdi-linkedin0.svg" class="h-5 w-5" /></a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="mdi-youtube0.svg" class="h-5 w-5" /></a>
+      </div>
+<div class="w-full border-t border-gray-700 pt-8">
+        <div class="flex flex-wrap justify-center gap-6 text-gray-300 text-sm md:text-base">
+          <a href="../Insights/index.html" class="hover:text-yellow-400">Insights</a>
+          <a href="../Testimonials/index.html" class="hover:text-yellow-400">Testimonials</a>
+          <a href="../FAQ/index.html" class="hover:text-yellow-400">FAQs</a>
+          <a href="../terms and conditions/index.html#privacy-policy" class="hover:text-yellow-400">Privacy Policy</a>
+          <a href="../terms and conditions/index.html" class="hover:text-yellow-400">Terms & Conditions</a>
+        </div>
+      <p class="text-gray-400 mt-5 text-sm mt-6">
+        © 2024 <span class="text-white font-semibold">Echo Creations</span>. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

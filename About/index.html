@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Echo Creations | About Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { text-decoration: none; }
+  </style>
+</head>
+<body class="bg-[#0b0b0b] text-white font-sans overflow-x-hidden">
+
+  <!-- ===== Navbar ===== -->
+  <header class="sticky top-0 w-full z-50 bg-black/60 backdrop-blur-md border-b border-gray-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+      <div class="flex items-center gap-3">
+        <img src="echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations Logo" />
+        <img src="echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations" />
+      </div>
+
+      <!-- Mobile Menu Toggle -->
+      <button id="menuToggle" class="lg:hidden text-white text-3xl focus:outline-none">☰</button>
+
+      <!-- Nav Menu -->
+      <nav id="navMenu"
+        class="hidden lg:flex flex-col lg:flex-row items-center gap-8 absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
+        <a href="../Home/index.html" class="text-gray-300 hover:text-white">Home</a>
+        <a href="index.html" class="text-yellow-400 font-semibold underline">About</a>
+        <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white">Podcast</a>
+        <a href="../Servics/index.html" class="text-gray-300 hover:text-white">Services</a>
+        <a href="../Contact/index.html" class="text-gray-300 hover:text-white">Contact</a>
+      </nav>
+
+      <a href="../Inquiry/index.html"
+        class="hidden lg:inline-block bg-yellow-500 text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">Let’s Talk →</a>
+    </div>
+  </header>
+
+  <script>
+    document.getElementById("menuToggle").onclick = () => {
+      document.getElementById("navMenu").classList.toggle("hidden");
+    };
+  </script>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="relative min-h-[70vh] flex items-center justify-center text-center overflow-hidden">
+    <img src="mask-group1.svg" alt="About Banner"
+      class="absolute inset-0 w-full h-full object-cover brightness-[0.8] contrast-[1.05]" />
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-black/90"></div>
+
+    <div class="relative z-10 px-6">
+      <h1 class="text-4xl md:text-6xl font-bold mb-3">About Us</h1>
+      <p class="text-gray-300 text-lg">From documentaries to photography, we bring your vision to life.</p>
+    </div>
+  </section>
+
+  <!-- ===== About Content ===== -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto flex flex-col gap-16">
+
+      <!-- First Section -->
+      <div class="flex flex-col items-center gap-8 text-center">
+        <p class="text-gray-300 leading-relaxed max-w-4xl">
+          Magna egestas tristique nascetur fermentum. A tempus habitant sed placerat tellus. Mattis nam massa sed
+          vulputate. Nisi interdum vel massa diam at. Pellentesque mattis id velit ultricies vestibulum ornare quam. Mi
+          amet sit vitae nibh ac sed vitae arcu. Non dictum vitae felis gravida turpis et et. Purus fringilla augue amet
+          sapien. Ac diam magna erat gravida pharetra senectus facilisi eget. Potenti facilisis in amet dui phasellus.
+          Semper sed mauris ornare condimentum.
+        </p>
+        <img src="mask-group0.svg" alt="About Section Image" class="rounded-xl w-full max-w-5xl object-cover" />
+      </div>
+
+      <!-- Who We Are -->
+      <div class="flex flex-col gap-4 text-left">
+        <h2 class="text-3xl font-semibold">Who We Are</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Proin lorem posuere nunc vitae. Nascetur mi euismod duis viverra sapien lorem fringilla id. In mattis fringilla
+          id pellentesque et scelerisque vulputate praesent viverra. Vel elementum imperdiet nisl id. Sed dictum turpis
+          mattis lorem euismod nunc egestas curabitur maecenas. Tristique vitae amet lobortis integer netus. Tristique
+          magna arcu morbi volutpat enim. Curabitur ornare id pulvinar dignissim euismod. Dictum hac tempor lectus massa
+          tincidunt. Risus enim risus in arcu mattis. Eleifend lacus odio orci quis ultrices ac id in mi. Massa
+          suspendisse vitae volutpat vehicula urna nisl sed ac tellus. Cras ipsum viverra quis commodo quam dolor eu
+          consectetur. Vel sed fusce sit donec fermentum dictum mauris feugiat.
+          <br /><br />
+          Egestas cursus vulputate sagittis pretium est interdum morbi. Quam tellus ut a quis at id consequat dolor
+          consectetur. Ipsum netus justo aliquet libero a etiam. Pharetra turpis velit felis lectus. Tellus nunc risus et
+          ut senectus massa congue. Eget est sagittis ac sed in diam enim molestie. Feugiat nulla leo accumsan non duis
+          eget odio vel. Consequat vehicula euismod viverra tortor pellentesque etiam volutpat. Fermentum sed magna
+          hendrerit sit etiam amet nisl dignissim. Amet vulputate pellentesque scelerisque elementum vitae ut a nulla
+          malesuada. At ultricies faucibus quam justo a egestas.
+        </p>
+      </div>
+
+      <!-- What We Stand For -->
+      <div class="flex flex-col gap-4 text-left">
+        <h2 class="text-3xl font-semibold">What We Stand For</h2>
+        <p class="text-gray-300 leading-relaxed">
+          Morbi scelerisque luctus quis mattis adipiscing. Scelerisque ipsum feugiat viverra id elementum commodo metus
+          tellus. Eget fames turpis scelerisque nulla ultrices. Diam hac nam at arcu egestas est magnis posuere. Dolor
+          nec tristique consequat facilisi gravida etiam tellus. Viverra etiam ultricies nisi et elit pellentesque quis.
+          Mattis dolor malesuada phasellus pellentesque at duis dictumst. Purus risus id purus eu. Mauris ut porta odio
+          sit tincidunt massa sed aenean vel. Condimentum ultrices convallis sed mi elit. Id ornare felis ut semper. Id
+          pharetra venenatis est mi quisque feugiat quis. Lectus amet fames molestie sagittis. Nec et viverra velit sed
+          odio ut posuere. Sagittis integer nibh est ornare tempus pulvinar odio gravida. Auctor facilisis vitae ultrices
+          pellentesque pulvinar in cursus ac. Sagittis quisque nulla lacus in tellus.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-gray-700 pt-16 pb-10 px-6 bg-black/70 backdrop-blur">
+    <div class="max-w-4xl mx-auto flex flex-col gap-10 items-center text-center">
+      <h3 class="text-2xl md:text-3xl font-bold text-yellow-400">Create. Inspire. Subscribe.</h3>
+      <form class="flex flex-col sm:flex-row gap-4 justify-center w-full max-w-xl">
+        <input type="email" placeholder="Email Address"
+          class="px-6 py-3 rounded-full border border-yellow-500 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full" />
+        <button type="submit"
+          class="bg-yellow-500 text-black px-6 py-3 rounded-full hover:bg-yellow-400 transition font-semibold">
+          Subscribe
+        </button>
+      </form>
+
+      <div class="flex gap-4 mt-6">
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition">
+          <img src="ri-facebook-fill0.svg" class="h-5 w-5" />
+        </a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition">
+          <img src="mdi-linkedin0.svg" class="h-5 w-5" />
+        </a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition">
+          <img src="mdi-youtube0.svg" class="h-5 w-5" />
+        </a>
+      </div>
+      <div class="w-full border-t border-gray-700 pt-8">
+        <div class="flex flex-wrap justify-center gap-6 text-gray-300 text-sm md:text-base">
+          <a href="../Insights/index.html" class="hover:text-yellow-400">Insights</a>
+          <a href="../Testimonials/index.html" class="hover:text-yellow-400">Testimonials</a>
+          <a href="../FAQ/index.html" class="hover:text-yellow-400">FAQs</a>
+          <a href="../terms and conditions/index.html#privacy-policy" class="hover:text-yellow-400">Privacy Policy</a>
+          <a href="../terms and conditions/index.html" class="hover:text-yellow-400">Terms & Conditions</a>
+        </div>
+
+      <p class="text-gray-400 mt-5 text-sm mt-6">
+        © 2024 <span class="text-white font-semibold">Echo Creations</span>. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+</body>
+</html>

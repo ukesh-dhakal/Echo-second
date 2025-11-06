@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Insights | Echo Creations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; border: none; text-decoration: none; background: none; }
+    menu, ol, ul { list-style: none; margin: 0; padding: 0; }
+  </style>
+</head>
+<body class="bg-[#000] text-white overflow-x-hidden">
+
+  <!-- ===== Navbar ===== -->
+  <header class="bg-[rgba(17,16,19,0.24)] backdrop-blur-sm border-b border-gray-800 fixed top-0 left-0 w-full z-50 h-[90px] flex items-center justify-between px-6 md:px-[60px]">
+    <div class="flex items-center gap-3">
+      <img src="echo-creations-logo-copy-10.png" alt="Logo" class="h-[42px] w-auto object-contain" />
+      <img src="echo-creations-logo-copy-20.png" alt="Echo Creations" class="h-8 w-auto object-contain" />
+    </div>
+    <button id="menuToggle" class="lg:hidden text-white text-3xl">☰</button>
+    <nav id="navMenu" class="hidden lg:flex gap-8 items-center text-[16px] font-medium">
+      <a href="../Home/index.html" class="hover:text-yellow-400">Home</a>
+      <a href="../About/index.html" class="hover:text-yellow-400">About</a>
+      <a href="../Podcasts/index.html" class="hover:text-yellow-400">Ankur’s Podcast</a>
+      <a href="../Servics/index.html" class="hover:text-yellow-400">Services</a>
+      <a href="../Insights/index.html" class="underline text-yellow-400 font-semibold">Insights</a>
+      <a href="../Contact/index.html" class="hover:text-yellow-400">Contact</a>
+    </nav>
+    <a href="../Inquiry/index.html"
+      class="hidden lg:inline-flex items-center gap-2 bg-secondary text-black font-medium px-6 py-2.5 rounded-full hover:bg-yellow-500 transition">
+      Let’s Talk
+      <img src="formkit-arrowright0.svg" alt="→" class="h-3" />
+    </a>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    menuToggle.addEventListener("click", () => navMenu.classList.toggle("hidden"));
+  </script>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="relative flex flex-col items-center justify-center text-center h-[400px] md:h-[664px] mt-[90px]">
+    <img src="mask-group0.svg" alt="Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+    <div class="absolute inset-0 bg-black/40"></div>
+    <div class="relative z-10 px-6">
+      <h1 class="text-3xl md:text-5xl font-bold mb-3">Insights</h1>
+      <p class="text-gray-300 text-lg">Stories, and Creativity - All in One Place</p>
+    </div>
+  </section>
+
+  <!-- ===== Insights Grid ===== -->
+  <section class="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+      <!-- Card 1 -->
+      <article class="flex flex-col gap-4">
+        <img src="mask-group1.svg" alt="Podcast Future" class="rounded-lg w-full h-56 object-cover" />
+        <div class="flex flex-col gap-2">
+          <p class="text-secondary text-sm">December 13, 2024</p>
+          <h3 class="text-xl font-semibold leading-snug">Why Podcasts Are the Future of Storytelling and Branding</h3>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="flex flex-col gap-4">
+        <img src="mask-group2.svg" alt="Studio Day" class="rounded-lg w-full h-56 object-cover" />
+        <div class="flex flex-col gap-2">
+          <p class="text-secondary text-sm">December 13, 2024</p>
+          <h3 class="text-xl font-semibold leading-snug">A Day in the Life of a Media Creation Studio</h3>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="flex flex-col gap-4">
+        <img src="mask-group3.svg" alt="Photography" class="rounded-lg w-full h-56 object-cover" />
+        <div class="flex flex-col gap-2">
+          <p class="text-secondary text-sm">December 13, 2024</p>
+          <h3 class="text-xl font-semibold leading-snug">Behind the Lens: The Art of Storytelling Through Photography</h3>
+        </div>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="flex flex-col gap-4">
+        <img src="mask-group4.svg" alt="Orci Elit" class="rounded-lg w-full h-56 object-cover" />
+        <div class="flex flex-col gap-2">
+          <p class="text-secondary text-sm">December 13, 2024</p>
+          <h3 class="text-xl font-semibold leading-snug">Orci elit erat quis sit vitae sagittis pellentesque.</h3>
+        </div>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="flex flex-col gap-4">
+        <img src="mask-group5.svg" alt="Tristique" class="rounded-lg w-full h-56 object-cover" />
+        <div class="flex flex-col gap-2">
+          <p class="text-secondary text-sm">December 13, 2024</p>
+          <h3 class="text-xl font-semibold leading-snug">Tristique elementum porttitor a libero aenean tortor.</h3>
+        </div>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="flex flex-col gap-4">
+        <img src="mask-group6.svg" alt="Sodales" class="rounded-lg w-full h-56 object-cover" />
+        <div class="flex flex-col gap-2">
+          <p class="text-secondary text-sm">December 13, 2024</p>
+          <h3 class="text-xl font-semibold leading-snug">Sodales risus viverra nisl sit blandit pellentesque sem venenatis nulla.</h3>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-secondary pt-20 pb-10 px-6 md:px-[132px] mt-20 text-center">
+    <h4 class="text-2xl md:text-3xl font-bold mb-6">Create. Inspire. Subscribe.</h4>
+
+    <form class="flex flex-col sm:flex-row justify-center gap-4 max-w-2xl mx-auto mb-10">
+      <input type="email" placeholder="Email Address"
+        class="flex-1 px-6 py-3 rounded-full border border-button-fill bg-transparent text-white placeholder-gray-400 focus:ring-2 focus:ring-button-fill" />
+      <button type="submit"
+        class="bg-button-fill px-7 py-3 rounded-full uppercase font-semibold tracking-widest hover:bg-secondary transition">
+        Subscribe
+      </button>
+    </form>
+
+    <div class="flex justify-center gap-4 flex-wrap mb-8">
+      <a href="#" class="social-icon"><img src="ri-facebook-fill0.svg" class="h-6 w-6" /></a>
+      <a href="#" class="social-icon"><img src="mdi-linkedin0.svg" class="h-6 w-6" /></a>
+      <a href="#" class="social-icon"><img src="ic-baseline-tiktok0.svg" class="h-6 w-6" /></a>
+      <a href="#" class="social-icon"><img src="mdi-youtube0.svg" class="h-6 w-6" /></a>
+      <a href="#" class="social-icon"><img src="ri-whatsapp-fill0.svg" class="h-6 w-6" /></a>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-6">
+      <a href="../Insights/index.html" class="hover:text-secondary">Insights</a>
+      <a href="../FAQ/index.html" class="hover:text-secondary">FAQs</a>
+      <a href="../terms and conditions/index.html#privacy-policy" class="hover:text-secondary">Privacy Policy</a>
+      <a href="../terms and conditions/index.html" class="hover:text-secondary">Terms & Conditions</a>
+    </div>
+
+    <p class="text-gray-500 text-sm">
+      © 2024 <span class="text-white font-semibold">Echo Creations</span>. All Rights Reserved.
+    </p>
+  </footer>
+
+  <style>
+    .social-icon {
+      border: 1px solid #1f1e24;
+      border-radius: 9999px;
+      padding: 0.75rem;
+      transition: all 0.3s ease;
+    }
+    .social-icon:hover {
+      border-color: var(--secondary, #f6b100);
+    }
+  </style>
+
+</body>
+</html>

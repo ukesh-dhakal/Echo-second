@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms & Conditions | Echo Creations</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-black text-white overflow-x-hidden font-sans">
+
+  <!-- ===== Sticky Navbar ===== -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[rgba(17,16,19,0.24)] backdrop-blur-md border-b border-gray-800 h-[90px] flex items-center justify-between px-6 md:px-[60px]">
+    <div class="flex items-center gap-3">
+      <img src="echo-creations-logo-copy-10.png" alt="Logo" class="h-[42px] w-auto object-contain" />
+      <img src="echo-creations-logo-copy-20.png" alt="Echo Creations" class="h-8 w-auto object-contain" />
+    </div>
+
+    <button id="menuToggle" class="lg:hidden text-white text-3xl">☰</button>
+
+    <nav id="navMenu" class="hidden lg:flex gap-8 items-center text-[16px] font-medium">
+      <a href="../Home/index.html" class="hover:text-yellow-400">Home</a>
+      <a href="../About/index.html" class="hover:text-yellow-400">About</a>
+      <a href="../Podcasts/index.html" class="hover:text-yellow-400">Ankur’s Podcast</a>
+      <a href="../Servics/index.html" class="hover:text-yellow-400">Services</a>
+      <a href="../Contact/index.html" class="hover:text-yellow-400">Contact</a>
+    </nav>
+
+    <a href="../Inquiry/index.html"
+       class="hidden lg:inline-flex items-center gap-2 bg-yellow-400 text-black font-medium px-6 py-2.5 rounded-full hover:bg-yellow-500 transition">
+      Let’s Talk
+      <img src="formkit-arrowright0.svg" alt="→" class="h-3" />
+    </a>
+  </header>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    menuToggle.addEventListener("click", () => navMenu.classList.toggle("hidden"));
+  </script>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="relative h-[380px] md:h-[460px] flex flex-col items-center justify-center text-center mt-[90px]">
+    <img src="mask-group0.svg" alt="Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80"></div>
+    <div class="relative z-10 px-6">
+      <h1 class="text-3xl md:text-5xl font-bold mb-3">Terms &amp; Conditions</h1>
+      <p class="text-gray-300 text-lg">Setting the Foundation for a Trustworthy Partnership</p>
+    </div>
+  </section>
+
+  <!-- ===== Main Content ===== -->
+  <section class="max-w-5xl mx-auto px-6 py-20 space-y-16">
+    <!-- Reusable Section -->
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold">Services &amp; Use of Website</h2>
+      <p class="text-gray-300 leading-relaxed">
+        Luctus amet hendrerit praesent vel nisl sit. Adipiscing lacinia maecenas enim vitae sit urna...
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold">Intellectual Property Rights</h2>
+      <p class="text-gray-300 leading-relaxed">
+        Libero sem orci quam odio. Erat neque molestie nullam varius risus porta id nisl...
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold">Limitation of Liability</h2>
+      <p class="text-gray-300 leading-relaxed">
+        Arcu massa auctor sem ultrices sit. Pretium pellentesque pharetra varius pretium...
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      <h2 class="text-2xl font-semibold">User Content and Submissions</h2>
+      <p class="text-gray-300 leading-relaxed">
+        Turpis suspendisse lorem urna at. Iaculis magnis pellentesque eu interdum fames...
+      </p>
+    </div>
+
+    <div class="space-y-4" id="privacy-policy">
+      <h2 class="text-2xl font-semibold">Privacy and Data Protection</h2>
+      <p class="text-gray-300 leading-relaxed">
+        In a digital age where convenience is key, podcasts cater to the growing demand for on-demand content...
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer class="border-t border-secondary pt-20 pb-10 px-6 md:px-[132px] text-center">
+    <h4 class="text-2xl md:text-3xl font-bold mb-6">Create. Inspire. Subscribe.</h4>
+
+    <form class="flex flex-col sm:flex-row justify-center gap-4 max-w-2xl mx-auto mb-10">
+      <input type="email" placeholder="Email Address"
+             class="flex-1 px-6 py-3 rounded-full border border-yellow-400 bg-transparent text-white placeholder-gray-400 focus:ring-2 focus:ring-yellow-400" />
+      <button type="submit"
+              class="bg-yellow-400 px-7 py-3 rounded-full uppercase font-semibold tracking-widest text-black hover:bg-yellow-500 transition">
+        Subscribe
+      </button>
+    </form>
+
+    <div class="flex justify-center gap-4 flex-wrap mb-8">
+      <img src="ri-facebook-fill0.svg" class="h-6 w-6" />
+      <img src="mdi-linkedin0.svg" class="h-6 w-6" />
+      <img src="ic-baseline-tiktok0.svg" class="h-6 w-6" />
+      <img src="mdi-youtube0.svg" class="h-6 w-6" />
+      <img src="ri-whatsapp-fill0.svg" class="h-6 w-6" />
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 text-sm text-gray-400 mb-6">
+      <a href="../Insights/index.html" class="hover:text-yellow-400">Insights</a>
+      <a href="../FAQ/index.html" class="hover:text-yellow-400">FAQs</a>
+      <a href="../Testimonials/index.html" class="hover:text-yellow-400">Testimonials</a>
+      <a href="../terms and conditions/index.html#privacy-policy" class="hover:text-yellow-400">Privacy Policy</a>
+      <a href="../terms and conditions/index.html" class="hover:text-yellow-400">Terms & Conditions</a>
+    </div>
+
+    <p class="text-gray-500 text-sm">
+      © 2024 <span class="text-white font-semibold">Echo Creations</span>. All Rights Reserved.
+    </p>
+  </footer>
+
+</body>
+</html>
