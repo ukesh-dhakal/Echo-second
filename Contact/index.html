@@ -15,32 +15,38 @@
   </style>
 </head>
 <body class="bg-[#0b0b0b] text-white font-sans overflow-x-hidden">
-
-  <!-- ===== Navbar ===== -->
-  <header class="sticky top-0 w-full z-50 bg-black/60 backdrop-blur-md border-b border-gray-800">
+  <!-- ===== Header / Navbar ===== -->
+  <header class="sticky top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-      <div class="flex items-center gap-3">
-        <img src="echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Logo" />
-        <img src="echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations" />
-      </div>
-      <button id="menuToggle" class="lg:hidden text-white text-3xl">☰</button>
+      <a href="../Home/index.html" class="flex items-center gap-3">
+        <img src="echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
+        <img src="echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
+      </a>
+
+      <button id="menuToggle" class="lg:hidden text-white text-3xl focus:outline-none" aria-label="Toggle navigation">☰</button>
+
       <nav id="navMenu"
-        class="hidden lg:flex flex-col lg:flex-row gap-8 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
-        <a href="../Home/index.html" class="text-gray-300 hover:text-white">Home</a>
-        <a href="../About/index.html" class="text-gray-300 hover:text-white">About</a>
-        <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white">Podcast</a>
-        <a href="../Servics/index.html" class="text-gray-300 hover:text-white">Services</a>
-        <a href="index.html" class="text-yellow-400 underline font-semibold">Contact</a>
+        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
+        <a href="../Home/index.html" class="text-gray-300 hover:text-white transition">Home</a>
+        <a href="../About/index.html" class="text-gray-300 hover:text-white transition">About</a>
+        <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white transition">Podcast</a>
+        <a href="../Servics/index.html" class="text-gray-300 hover:text-white transition">Services</a>
+        <a href="../Contact/index.html" class="text-gray-300 hover:text-white transition">Contact</a>
       </nav>
+
       <a href="../Inquiry/index.html"
-        class="hidden lg:inline-block bg-yellow-500 text-black font-medium px-6 py-2 rounded-full hover:bg-yellow-400 transition">Let’s Talk →</a>
+        class="hidden lg:inline-block bg-yellow-500 text-black font-semibold px-6 py-2 rounded-full hover:bg-yellow-400 transition">Let’s Talk →</a>
     </div>
   </header>
 
   <script>
-    document.getElementById("menuToggle").onclick = () => {
-      document.getElementById("navMenu").classList.toggle("hidden");
-    };
+    const toggle = document.getElementById("menuToggle");
+    const menu = document.getElementById("navMenu");
+    if (toggle && menu) {
+      toggle.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+    }
   </script>
 
   <!-- ===== Hero Section ===== -->
@@ -112,7 +118,6 @@
       </form>
     </div>
   </section>
-
   <!-- ===== Footer ===== -->
   <footer class="border-t border-gray-700 pt-16 pb-10 px-6 bg-black/70 backdrop-blur">
     <div class="max-w-4xl mx-auto flex flex-col gap-10 items-center text-center">
@@ -121,17 +126,23 @@
         <input type="email" placeholder="Email Address"
           class="px-6 py-3 rounded-full border border-yellow-500 bg-transparent text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-yellow-400 w-full" />
         <button type="submit"
-          class="bg-yellow-500 text-black px-6 py-3 rounded-full hover:bg-yellow-400 transition font-semibold">
-          Subscribe
-        </button>
+          class="bg-yellow-500 text-black px-6 py-3 rounded-full hover:bg-yellow-400 transition font-semibold">Subscribe</button>
       </form>
-
       <div class="flex gap-4 mt-6">
-        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="ri-facebook-fill0.svg" class="h-5 w-5" /></a>
-        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="mdi-linkedin0.svg" class="h-5 w-5" /></a>
-        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition"><img src="mdi-youtube0.svg" class="h-5 w-5" /></a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Facebook">
+          <img src="ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
+        </a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="LinkedIn">
+          <img src="mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
+        </a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Instagram">
+          <img src="mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
+        </a>
+        <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="YouTube">
+          <img src="mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
+        </a>
       </div>
-<div class="w-full border-t border-gray-700 pt-8">
+      <div class="w-full border-t border-gray-700 pt-8">
         <div class="flex flex-wrap justify-center gap-6 text-gray-300 text-sm md:text-base">
           <a href="../Insights/index.html" class="hover:text-yellow-400">Insights</a>
           <a href="../Testimonials/index.html" class="hover:text-yellow-400">Testimonials</a>
@@ -139,10 +150,10 @@
           <a href="../terms and conditions/index.html#privacy-policy" class="hover:text-yellow-400">Privacy Policy</a>
           <a href="../terms and conditions/index.html" class="hover:text-yellow-400">Terms & Conditions</a>
         </div>
-      <p class="text-gray-400 mt-5 text-sm mt-6">
-        © 2024 <span class="text-white font-semibold">Echo Creations</span>. All Rights Reserved.
-      </p>
+        <p class="text-gray-400 mt-6 text-sm">© 2024 <span class="text-white font-semibold">Echo Creations</span>. All Rights Reserved.</p>
+      </div>
     </div>
   </footer>
+
 </body>
 </html>
