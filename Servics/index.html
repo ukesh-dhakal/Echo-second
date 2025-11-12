@@ -23,7 +23,7 @@
       <button id="menuToggle" class="lg:hidden text-white text-3xl focus:outline-none" aria-label="Toggle navigation">☰</button>
 
       <nav id="navMenu"
-        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
+        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0 shadow-lg lg:shadow-none">
         <a href="../Home/index.html" class="text-gray-300 hover:text-white transition">Home</a>
         <a href="../About/index.html" class="text-gray-300 hover:text-white transition">About</a>
         <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white transition">Podcast</a>
@@ -40,14 +40,48 @@
     const toggle = document.getElementById("menuToggle");
     const menu = document.getElementById("navMenu");
     if (toggle && menu) {
+      toggle.setAttribute("aria-expanded", "false");
       toggle.addEventListener("click", () => {
         menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+        const isOpen = !menu.classList.contains("hidden");
+        toggle.setAttribute("aria-expanded", String(isOpen));
       });
+
+      const closeMenu = () => {
+        if (window.innerWidth < 1024) {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+          menu.classList.remove("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        } else {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      window.addEventListener("resize", () => {
+        handleResize();
+      });
+
+      handleResize();
     }
   </script>
 
   <!-- ===== Hero Section ===== -->
-  <section class="relative h-[400px] md:h-[664px] flex flex-col items-center justify-center text-center mt-[90px]">
+  <section class="relative h-[400px] md:h-[664px] flex flex-col items-center justify-center text-center">
     <img src="mask-group4.svg" alt="Services Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80"></div>
     <div class="relative z-10 px-6">
