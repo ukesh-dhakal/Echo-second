@@ -17,14 +17,14 @@
   <header class="sticky top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="../Home/index.html" class="flex items-center gap-3">
-        <img src="echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
-        <img src="echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
+        <img src="../assets/insights-single/echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
+        <img src="../assets/insights-single/echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
       </a>
 
       <button id="menuToggle" class="lg:hidden text-white text-3xl focus:outline-none" aria-label="Toggle navigation">☰</button>
 
       <nav id="navMenu"
-        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
+        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0 shadow-lg lg:shadow-none">
         <a href="../Home/index.html" class="text-gray-300 hover:text-white transition">Home</a>
         <a href="../About/index.html" class="text-gray-300 hover:text-white transition">About</a>
         <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white transition">Podcast</a>
@@ -41,15 +41,49 @@
     const toggle = document.getElementById("menuToggle");
     const menu = document.getElementById("navMenu");
     if (toggle && menu) {
+      toggle.setAttribute("aria-expanded", "false");
       toggle.addEventListener("click", () => {
         menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+        const isOpen = !menu.classList.contains("hidden");
+        toggle.setAttribute("aria-expanded", String(isOpen));
       });
+
+      const closeMenu = () => {
+        if (window.innerWidth < 1024) {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+          menu.classList.remove("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        } else {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      window.addEventListener("resize", () => {
+        handleResize();
+      });
+
+      handleResize();
     }
   </script>
 
   <!-- ===== Hero ===== -->
   <section class="relative h-[400px] md:h-[664px] flex flex-col items-center justify-center text-center mt-[90px]">
-    <img src="mask-group0.svg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+    <img src="../assets/insights-single/mask-group0.svg" alt="Hero Background" class="absolute inset-0 w-full h-full object-cover brightness-75" />
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="relative z-10 px-6">
       <h1 class="text-3xl md:text-5xl font-bold mb-3 leading-snug">Why Podcasts Are the Future of Storytelling and Branding</h1>
@@ -121,8 +155,8 @@
     <div class="flex items-center justify-center gap-4 text-center">
       <span class="text-gray-300">Share :</span>
       <div class="flex gap-3">
-        <img src="ri-facebook-fill0.svg" alt="Facebook" class="h-6 w-6" />
-        <img src="ri-whatsapp-fill0.svg" alt="WhatsApp" class="h-6 w-6" />
+        <img src="../assets/insights-single/ri-facebook-fill0.svg" alt="Facebook" class="h-6 w-6" />
+        <img src="../assets/insights-single/ri-whatsapp-fill0.svg" alt="WhatsApp" class="h-6 w-6" />
       </div>
     </div>
   </main>
@@ -132,17 +166,17 @@
     <h2 class="text-3xl font-semibold mb-10 text-white">Related Insights</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
       <article class="flex flex-col gap-4">
-        <img src="mask-group1.svg" alt="" class="rounded-lg w-full h-56 object-cover" />
+        <img src="../assets/insights-single/mask-group1.svg" alt="" class="rounded-lg w-full h-56 object-cover" />
         <p class="text-secondary text-sm">December 13, 2024</p>
         <h3 class="text-xl font-semibold leading-snug text-white">Orci elit erat quis sit vitae sagittis pellentesque.</h3>
       </article>
       <article class="flex flex-col gap-4">
-        <img src="mask-group2.svg" alt="" class="rounded-lg w-full h-56 object-cover" />
+        <img src="../assets/insights-single/mask-group2.svg" alt="" class="rounded-lg w-full h-56 object-cover" />
         <p class="text-secondary text-sm">December 13, 2024</p>
         <h3 class="text-xl font-semibold leading-snug text-white">Tristique elementum porttitor a libero aenean tortor.</h3>
       </article>
       <article class="flex flex-col gap-4">
-        <img src="mask-group3.svg" alt="" class="rounded-lg w-full h-56 object-cover" />
+        <img src="../assets/insights-single/mask-group3.svg" alt="" class="rounded-lg w-full h-56 object-cover" />
         <p class="text-secondary text-sm">December 13, 2024</p>
         <h3 class="text-xl font-semibold leading-snug text-white">Sodales risus viverra nisl sit blandit pellentesque sem venenatis nulla.</h3>
       </article>
@@ -160,16 +194,16 @@
       </form>
       <div class="flex gap-4 mt-6">
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Facebook">
-          <img src="ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
+          <img src="../assets/insights-single/ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="LinkedIn">
-          <img src="mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
+          <img src="../assets/insights-single/mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Instagram">
-          <img src="mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
+          <img src="../assets/insights-single/mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="YouTube">
-          <img src="mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
+          <img src="../assets/insights-single/mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
         </a>
       </div>
       <div class="w-full border-t border-gray-700 pt-8">

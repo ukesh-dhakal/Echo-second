@@ -15,14 +15,14 @@
   <header class="sticky top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="../Home/index.html" class="flex items-center gap-3">
-        <img src="echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
-        <img src="echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
+        <img src="../assets/faq/echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
+        <img src="../assets/faq/echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
       </a>
 
       <button id="menuToggle" class="lg:hidden text-white text-3xl focus:outline-none" aria-label="Toggle navigation">☰</button>
 
       <nav id="navMenu"
-        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
+        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0 shadow-lg lg:shadow-none">
         <a href="../Home/index.html" class="text-gray-300 hover:text-white transition">Home</a>
         <a href="../About/index.html" class="text-gray-300 hover:text-white transition">About</a>
         <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white transition">Podcast</a>
@@ -39,9 +39,43 @@
     const toggle = document.getElementById("menuToggle");
     const menu = document.getElementById("navMenu");
     if (toggle && menu) {
+      toggle.setAttribute("aria-expanded", "false");
       toggle.addEventListener("click", () => {
         menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+        const isOpen = !menu.classList.contains("hidden");
+        toggle.setAttribute("aria-expanded", String(isOpen));
       });
+
+      const closeMenu = () => {
+        if (window.innerWidth < 1024) {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+          menu.classList.remove("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        } else {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      window.addEventListener("resize", () => {
+        handleResize();
+      });
+
+      handleResize();
     }
   </script>
 
@@ -70,7 +104,7 @@
 
   <!-- ===== Hero Section ===== -->
   <section class="relative min-h-[60vh] flex flex-col items-center justify-center text-center overflow-hidden">
-    <img src="mask-group0.svg" alt="Hero Image"
+    <img src="../assets/faq/mask-group0.svg" alt="Hero Image"
       class="absolute inset-0 w-full h-full object-cover brightness-[0.7]" />
     <div class="absolute inset-0 bg-gradient-to-b from-black/20 via-black/70 to-black/90"></div>
     <div class="relative z-10 px-6">
@@ -92,7 +126,7 @@
         <a href="../Contact/index.html"
           class="bg-yellow-500 text-black font-medium px-8 py-3 rounded-full hover:bg-yellow-400 transition inline-flex items-center gap-2">
           Talk to Us
-          <img src="formkit-arrowright0.svg" class="h-3" alt="→" />
+          <img src="../assets/faq/formkit-arrowright0.svg" class="h-3" alt="→" />
         </a>
       </div>
 
@@ -102,7 +136,7 @@
           <details open class="group">
             <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
               <span>What is Echo Creations?</span>
-              <img src="group-10.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+              <img src="../assets/faq/group-10.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
             </summary>
             <p class="text-gray-400 mt-3">
               A visionary media company specializing in documentaries, podcasts, photography, and filmmaking — bringing creative ideas to life that resonate like an echo.
@@ -114,7 +148,7 @@
           <details class="group">
             <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
               <span>How can I get in touch with Echo Creations?</span>
-              <img src="group-11.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+              <img src="../assets/faq/group-11.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
             </summary>
             <p class="text-gray-400 mt-3">
               You can reach us anytime through our <a href="../Contact/index.html" class="text-yellow-400 hover:underline">Contact Page</a>, email, or social channels.
@@ -126,7 +160,7 @@
           <details class="group">
             <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
               <span>What kind of photography services do you offer?</span>
-              <img src="group-12.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+              <img src="../assets/faq/group-12.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
             </summary>
             <p class="text-gray-400 mt-3">
               We provide a range of photography services — from documentary and commercial shoots to creative campaigns and high-altitude projects.
@@ -138,7 +172,7 @@
           <details class="group">
             <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
               <span>Do you produce podcasts for individuals or businesses?</span>
-              <img src="group-13.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+              <img src="../assets/faq/group-13.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
             </summary>
             <p class="text-gray-400 mt-3">
               Yes — we create tailored podcasts for brands, organizations, and individuals who want their stories told with authenticity and impact.
@@ -150,7 +184,7 @@
           <details class="group">
             <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
               <span>Do you handle post-production for filmmaking and photography?</span>
-              <img src="group-14.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+              <img src="../assets/faq/group-14.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
             </summary>
             <p class="text-gray-400 mt-3">
               Absolutely — our team handles color grading, editing, sound design, and visual effects to deliver stunning final outputs.
@@ -162,7 +196,7 @@
           <details class="group">
             <summary class="flex justify-between items-center cursor-pointer text-xl font-semibold text-white">
               <span>Can I collaborate with Echo Creations as a freelance creative?</span>
-              <img src="group-15.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
+              <img src="../assets/faq/group-15.svg" class="w-5 h-5 group-open:rotate-180 transition-transform" />
             </summary>
             <p class="text-gray-400 mt-3">
               Yes, we’re always open to collaborating with passionate freelancers and creatives. Drop us a message on our contact page!
@@ -184,16 +218,16 @@
       </form>
       <div class="flex gap-4 mt-6">
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Facebook">
-          <img src="ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
+          <img src="../assets/faq/ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="LinkedIn">
-          <img src="mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
+          <img src="../assets/faq/mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Instagram">
-          <img src="mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
+          <img src="../assets/faq/mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="YouTube">
-          <img src="mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
+          <img src="../assets/faq/mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
         </a>
       </div>
       <div class="w-full border-t border-gray-700 pt-8">
