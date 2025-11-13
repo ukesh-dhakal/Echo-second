@@ -4,29 +4,25 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./vars.css" />
-  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="../assets/styles/vars.css" />
+  <link rel="stylesheet" href="../style/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="./tailwind.config.js"></script>
+  <script src="../assets/styles/tailwindconfig.js"></script>
   <title>Contact | Echo Creations</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; border: none; text-decoration: none; background: none; }
-    menu, ol, ul { list-style: none; margin: 0; padding: 0; }
-  </style>
 </head>
 <body class="bg-primary-bg text-white overflow-x-hidden">
   <!-- ===== Header / Navbar ===== -->
   <header class="sticky top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="../Home/index.html" class="flex items-center gap-3">
-        <img src="echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
-        <img src="echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
+        <img src="../assets/shared/echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
+        <img src="../assets/shared/echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
       </a>
 
       <button id="menuToggle" class="lg:hidden text-white text-3xl focus:outline-none" aria-label="Toggle navigation">☰</button>
 
       <nav id="navMenu"
-        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
+        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0 shadow-lg lg:shadow-none">
         <a href="../Home/index.html" class="text-gray-300 hover:text-white transition">Home</a>
         <a href="../About/index.html" class="text-gray-300 hover:text-white transition">About</a>
         <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white transition">Podcast</a>
@@ -43,15 +39,49 @@
     const toggle = document.getElementById("menuToggle");
     const menu = document.getElementById("navMenu");
     if (toggle && menu) {
+      toggle.setAttribute("aria-expanded", "false");
       toggle.addEventListener("click", () => {
         menu.classList.toggle("hidden");
+        menu.classList.toggle("flex");
+        const isOpen = !menu.classList.contains("hidden");
+        toggle.setAttribute("aria-expanded", String(isOpen));
       });
+
+      const closeMenu = () => {
+        if (window.innerWidth < 1024) {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      menu.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      const handleResize = () => {
+        if (window.innerWidth >= 1024) {
+          menu.classList.remove("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        } else {
+          menu.classList.add("hidden");
+          menu.classList.remove("flex");
+          toggle.setAttribute("aria-expanded", "false");
+        }
+      };
+
+      window.addEventListener("resize", () => {
+        handleResize();
+      });
+
+      handleResize();
     }
   </script>
 
   <!-- ===== Hero Section ===== -->
   <section class="relative h-[460px] flex flex-col items-center justify-center mt-[90px] text-center">
-    <img src="mask-group0.svg" alt="Hero Background"
+    <img src="../assets/inquiry/mask-group0.svg" alt="Hero Background"
       class="absolute inset-0 w-full h-full object-cover brightness-75" />
     <div class="absolute inset-0 bg-black/40"></div>
     <div class="relative z-10 px-4">
@@ -81,30 +111,11 @@
         <textarea placeholder="Message" class="contact-input w-full h-32 resize-none"></textarea>
         <button type="submit"
           class="bg-button-fill rounded-full px-8 py-3 font-semibold flex items-center justify-center gap-2 hover:bg-secondary transition">
-          Send <img src="formkit-arrowright0.svg" class="h-3" />
+          Send <img src="../assets/inquiry/formkit-arrowright0.svg" class="h-3" />
         </button>
       </form>
     </div>
   </section>
-
-  <style>
-    .contact-input {
-      border: 1px solid var(--button-fill, #f6b100);
-      border-radius: 1.5rem;
-      background: transparent;
-      color: white;
-      padding: 14px 24px;
-      font-size: 1rem;
-      outline: none;
-      transition: border 0.3s ease;
-    }
-    .contact-input::placeholder {
-      color: #bfbfbf;
-    }
-    .contact-input:focus {
-      border-color: #ffd34e;
-    }
-  </style>
 
   <!-- ===== WhatsApp Section ===== -->
   <section class="max-w-5xl mx-auto bg-button-fill rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-start justify-between gap-8 text-left">
@@ -118,7 +129,7 @@
     <a href="https://wa.me/" target="_blank"
       class="bg-secondary text-black px-8 py-3 rounded-full font-semibold flex items-center gap-2 hover:bg-yellow-400 transition">
       Whatsapp
-      <img src="formkit-arrowright1.svg" class="h-3" />
+      <img src="../assets/inquiry/formkit-arrowright1.svg" class="h-3" />
     </a>
   </section>
   <!-- ===== Footer ===== -->
@@ -133,16 +144,16 @@
       </form>
       <div class="flex gap-4 mt-6">
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Facebook">
-          <img src="ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
+          <img src="../assets/shared/ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="LinkedIn">
-          <img src="mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
+          <img src="../assets/shared/mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Instagram">
-          <img src="mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
+          <img src="../assets/shared/mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="YouTube">
-          <img src="mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
+          <img src="../assets/shared/mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
         </a>
       </div>
       <div class="w-full border-t border-gray-700 pt-8">
@@ -157,18 +168,6 @@
       </div>
     </div>
   </footer>
-
-  <style>
-    .social-icon {
-      border: 1px solid #1f1e24;
-      border-radius: 9999px;
-      padding: 0.75rem;
-      transition: all 0.3s ease;
-    }
-    .social-icon:hover {
-      border-color: var(--secondary, #f6b100);
-    }
-  </style>
 
 </body>
 </html>
