@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Services | Echo Creations</title>
+  <link rel="stylesheet" href="../assets/styles/vars.css" />
+  <link rel="stylesheet" href="../assets/styles/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    ul { list-style: none; }
-  </style>
+  <script src="../assets/styles/tailwindconfig.js"></script>
 </head>
 
 <body class="bg-black text-white overflow-x-hidden">
@@ -16,14 +15,14 @@
   <header class="sticky top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="../Home/index.html" class="flex items-center gap-3">
-        <img src="echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
-        <img src="echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
+        <img src="./echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
+        <img src="./echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
       </a>
 
       <button id="menuToggle" class="lg:hidden text-white text-3xl focus:outline-none" aria-label="Toggle navigation">☰</button>
 
       <nav id="navMenu"
-        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
+        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0 shadow-lg lg:shadow-none">
         <a href="../Home/index.html" class="text-gray-300 hover:text-white transition">Home</a>
         <a href="../About/index.html" class="text-gray-300 hover:text-white transition">About</a>
         <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white transition">Podcast</a>
@@ -36,19 +35,11 @@
     </div>
   </header>
 
-  <script>
-    const toggle = document.getElementById("menuToggle");
-    const menu = document.getElementById("navMenu");
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    }
-  </script>
+  <script src="../assets/js/navigation.js"></script>
 
   <!-- ===== Hero Section ===== -->
-  <section class="relative h-[400px] md:h-[664px] flex flex-col items-center justify-center text-center mt-[90px]">
-    <img src="mask-group4.svg" alt="Services Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
+  <section class="relative h-[400px] md:h-[664px] flex flex-col items-center justify-center text-center">
+    <img src="./mask-group4.svg" alt="Services Hero" class="absolute inset-0 w-full h-full object-cover brightness-75" />
     <div class="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/80"></div>
     <div class="relative z-10 px-6">
       <h1 class="text-3xl md:text-5xl font-bold mb-3">Services</h1>
@@ -66,22 +57,22 @@
     <div class="grid md:grid-cols-2 gap-8">
       <!-- Card -->
       <div class="space-y-4">
-        <img src="mask-group0.svg" alt="Podcasts" class="w-full h-[300px] md:h-[400px] rounded-xl object-cover" />
+        <img src="./mask-group0.svg" alt="Podcasts" class="w-full h-[300px] md:h-[400px] rounded-xl object-cover" />
         <h3 class="text-2xl font-semibold">Podcasts</h3>
       </div>
 
       <div class="space-y-4">
-        <img src="mask-group1.svg" alt="Documentaries" class="w-full h-[300px] md:h-[400px] rounded-xl object-cover" />
+        <img src="./mask-group1.svg" alt="Documentaries" class="w-full h-[300px] md:h-[400px] rounded-xl object-cover" />
         <h3 class="text-2xl font-semibold">Documentaries</h3>
       </div>
 
       <div class="space-y-4">
-        <img src="mask-group2.svg" alt="Photography" class="w-full h-[300px] md:h-[400px] rounded-xl object-cover" />
+        <img src="./mask-group2.svg" alt="Photography" class="w-full h-[300px] md:h-[400px] rounded-xl object-cover" />
         <h3 class="text-2xl font-semibold">Photography</h3>
       </div>
 
       <div class="space-y-4">
-        <img src="mask-group3.svg" alt="Filmmaking" class="w-full h-[300px] md:h-[400px] rounded-xl object-cover" />
+        <img src="./mask-group3.svg" alt="Filmmaking" class="w-full h-[300px] md:h-[400px] rounded-xl object-cover" />
         <h3 class="text-2xl font-semibold">Filmmaking</h3>
       </div>
     </div>
@@ -98,7 +89,7 @@
     <a href="../Inquiry/index.html"
        class="inline-flex items-center gap-2 border border-yellow-400 text-yellow-400 rounded-full px-10 py-3 font-semibold hover:bg-yellow-400 hover:text-black transition">
       Let’s Talk
-      <img src="formkit-arrowright0.svg" alt="→" class="h-3" />
+      <img src="./formkit-arrowright0.svg" alt="→" class="h-3" />
     </a>
   </section>
   <!-- ===== Footer ===== -->
@@ -113,16 +104,16 @@
       </form>
       <div class="flex gap-4 mt-6">
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Facebook">
-          <img src="ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
+          <img src="./ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="LinkedIn">
-          <img src="mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
+          <img src="./mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Instagram">
-          <img src="mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
+          <img src="./mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="YouTube">
-          <img src="mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
+          <img src="./mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
         </a>
       </div>
       <div class="w-full border-t border-gray-700 pt-8">

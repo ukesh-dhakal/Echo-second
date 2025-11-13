@@ -4,30 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Echo Creations | About Us</title>
+  <link rel="stylesheet" href="../assets/styles/vars.css" />
+  <link rel="stylesheet" href="../assets/styles/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { text-decoration: none; }
-  </style>
+  <script src="../assets/styles/tailwindconfig.js"></script>
 </head>
 <body class="bg-[#0b0b0b] text-white font-sans overflow-x-hidden">
   <!-- ===== Header / Navbar ===== -->
   <header class="sticky top-0 left-0 w-full z-50 bg-black/70 backdrop-blur-md border-b border-gray-800">
     <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
       <a href="../Home/index.html" class="flex items-center gap-3">
-        <img src="echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
-        <img src="echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
+        <img src="./echo-creations-logo-copy-10.png" class="h-10 w-auto" alt="Echo Creations logo">
+        <img src="./echo-creations-logo-copy-20.png" class="h-8 w-auto" alt="Echo Creations wordmark">
       </a>
 
       <button id="menuToggle" class="lg:hidden text-white text-3xl focus:outline-none" aria-label="Toggle navigation">☰</button>
 
       <nav id="navMenu"
-        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0">
+        class="hidden lg:flex flex-col lg:flex-row gap-6 items-center absolute lg:static top-[72px] left-0 w-full lg:w-auto bg-black/90 lg:bg-transparent p-6 lg:p-0 shadow-lg lg:shadow-none">
         <a href="../Home/index.html" class="text-gray-300 hover:text-white transition">Home</a>
         <a href="../About/index.html" class="text-gray-300 hover:text-white transition">About</a>
         <a href="../Podcasts/index.html" class="text-gray-300 hover:text-white transition">Podcast</a>
@@ -40,19 +34,11 @@
     </div>
   </header>
 
-  <script>
-    const toggle = document.getElementById("menuToggle");
-    const menu = document.getElementById("navMenu");
-    if (toggle && menu) {
-      toggle.addEventListener("click", () => {
-        menu.classList.toggle("hidden");
-      });
-    }
-  </script>
+  <script src="../assets/js/navigation.js"></script>
 
   <!-- ===== Hero Section ===== -->
   <section class="relative min-h-[70vh] flex items-center justify-center text-center overflow-hidden">
-    <img src="mask-group1.svg" alt="About Banner"
+    <img src="./mask-group1.svg" alt="About Banner"
       class="absolute inset-0 w-full h-full object-cover brightness-[0.8] contrast-[1.05]" />
     <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/70 to-black/90"></div>
 
@@ -75,7 +61,7 @@
           sapien. Ac diam magna erat gravida pharetra senectus facilisi eget. Potenti facilisis in amet dui phasellus.
           Semper sed mauris ornare condimentum.
         </p>
-        <img src="mask-group0.svg" alt="About Section Image" class="rounded-xl w-full max-w-5xl object-cover" />
+        <img src="./mask-group0.svg" alt="About Section Image" class="rounded-xl w-full max-w-5xl object-cover" />
       </div>
 
       <!-- Who We Are -->
@@ -127,16 +113,16 @@
       </form>
       <div class="flex gap-4 mt-6">
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Facebook">
-          <img src="ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
+          <img src="./ri-facebook-fill0.svg" class="h-5 w-5" alt="Facebook" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="LinkedIn">
-          <img src="mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
+          <img src="./mdi-linkedin0.svg" class="h-5 w-5" alt="LinkedIn" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="Instagram">
-          <img src="mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
+          <img src="./mdi-instagram0.svg" class="h-5 w-5" alt="Instagram" />
         </a>
         <a href="#" class="p-3 border border-gray-700 rounded-full hover:border-yellow-400 transition" aria-label="YouTube">
-          <img src="mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
+          <img src="./mdi-youtube0.svg" class="h-5 w-5" alt="YouTube" />
         </a>
       </div>
       <div class="w-full border-t border-gray-700 pt-8">
