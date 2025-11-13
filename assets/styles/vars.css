@@ -1,6 +1,4 @@
-/* Figma Styles of your File */
 :root {
-  /* Colors */
   --services-overlay: radial-gradient(
     closest-side,
     rgba(86, 89, 96, 0) 0%,
@@ -8,7 +6,6 @@
     rgba(86, 89, 96, 0.6) 100%
   );
 
-  /* Fonts */
   --text-32-font-family: Urbanist-SemiBold, sans-serif;
   --text-32-font-size: 32px;
   --text-32-line-height: normal;
@@ -74,13 +71,10 @@
   --semibold-18-line-height: normal;
   --semibold-18-font-weight: 600;
   --semibold-18-font-style: normal;
-
-  /* Effects */
 }
-/* Figma Color Variables of your File */
+
 :root,
 [data-collection-1-mode="mode-1"] {
-  /* mode-1 */
   --secondary: #a6abb4;
   --primary-text: #212529;
   --primary-bg: #111013;
